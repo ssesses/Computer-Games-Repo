@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 949569693}
-  player: {fileID: 1979890480}
+  player: {fileID: 0}
   Floor:
     serializedVersion: 2
     m_Bits: 64
@@ -1393,6 +1393,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2001761972}
     - target: {fileID: 2432472647448118304, guid: a25c85e13f1a6bc4d9dcfe080e662214, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 5414676409393370215}
+    - target: {fileID: 2432472647448118304, guid: a25c85e13f1a6bc4d9dcfe080e662214, type: 3}
       propertyPath: position
       value: 
       objectReference: {fileID: 285969028}
@@ -1500,6 +1504,11 @@ MonoBehaviour:
   throwKey: 323
   throwForce: 0.75
   throwUpwardForce: 1
+--- !u!95 &5414676409393370215 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3053214168286176349, guid: a25c85e13f1a6bc4d9dcfe080e662214, type: 3}
+  m_PrefabInstance: {fileID: 5414676409393370208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

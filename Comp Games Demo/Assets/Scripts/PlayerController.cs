@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 horizontalMove;
     private Vector3 verticalMove;
 
+    public Animator anim;
+
     // public GameObject Camera;
     // private Vector2 move, look;
     // private float lookRotation;
@@ -71,7 +73,17 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
             }
-
         }
+
+        if(Physics.CheckSphere(GroundCheckTransform.position, 1f, FloorMask))
+        {
+            anim.SetBool("isGrounded", true);
+        }
+        else
+        {
+            anim.SetBool("isGrounded", false);
+        }
+
+        anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
     }
 }

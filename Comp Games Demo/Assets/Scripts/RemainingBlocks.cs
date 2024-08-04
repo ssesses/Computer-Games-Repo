@@ -18,7 +18,7 @@ public class RemainingBlocks : MonoBehaviour
             {
                 blockCount -= 1;
             }
-            else if(blockCount < 0)
+            else if(blockCount < 1)
             {
                 blockCount = 0;
                 remainingBlocks.color = Color.red;

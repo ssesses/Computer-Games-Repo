@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4012560765719984999}
   - component: {fileID: 3379219155100432113}
   - component: {fileID: 2432472647448118304}
+  - component: {fileID: 3053214168286176349}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -29,14 +30,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2685647205702829697}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.08395592, w: 0.99646956}
-  m_LocalPosition: {x: 471.776, y: 41.518, z: 201.02}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5607487666294480652}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6054614314097418156
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -154,6 +155,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   GroundCheckTransform: {fileID: 5607487666294480652}
+--- !u!95 &3053214168286176349
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2685647205702829697}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3da9d7fb2dbecb479bd5e603f20bb34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3003969537314461401
 GameObject:
   m_ObjectHideFlags: 0
