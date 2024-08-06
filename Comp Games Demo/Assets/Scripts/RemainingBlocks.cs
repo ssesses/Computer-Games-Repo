@@ -9,6 +9,10 @@ public class RemainingBlocks : MonoBehaviour
     [SerializeField] public float blockCount;
     public KeyCode throwKey;
 
+    void Start()
+    {
+        remainingBlocks.text = "100";
+    }
     // Update is called once per frame
     void Update()
     {

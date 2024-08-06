@@ -18,6 +18,9 @@ public class CubeThrow : MonoBehaviour
 
     bool readyToThrow;
 
+    public AudioSource audioSource;
+    public AudioClip pop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +55,8 @@ public class CubeThrow : MonoBehaviour
         {
             forceDirection = (hit.point - attackPoint.position).normalized;
         }
+
+        audioSource.PlayOneShot(pop);
 
         //force to add
         Vector3 forceToAdd = forceDirection * throwForce + transform.up * throwUpwardForce;
