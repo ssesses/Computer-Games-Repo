@@ -8,6 +8,7 @@ public Transform target;
 public Vector3 offset;
 public float rotationSensitivity;
 public Transform pivot;
+public CameraShake shakingScript;
 
     // Start is called before the first frame update
     void Start()
@@ -45,13 +46,16 @@ public Transform pivot;
         float XAngle = pivot.eulerAngles.x;
 
         Quaternion rotation = Quaternion.Euler(XAngle, YAngle, 0);
-        transform.position = target.position - (rotation * offset);
 
-        if(transform.position.y < target.position.y)
+        if(shakingScript.Shaking == false)
         {
-            transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
-        }
+            transform.position = target.position - (rotation * offset);
 
+            if(transform.position.y < target.position.y)
+            {
+                transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
+            }
+        }
         transform.LookAt(target);
     }
 }

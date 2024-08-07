@@ -4,22 +4,36 @@ using UnityEngine;
 
 public class CubeThrow : MonoBehaviour
 {
+    //Objects
+    [Header("Objects")]
     public Transform cam;
     public Transform attackPoint;
     public GameObject throwObject;
     public Transform maincube;
 
+    //Limits
+    [Header("Limits")]
     public int totalThrows;
     public float throwCooldown;
 
+    //Throw Variables
+    [Header("Throw Variables")]
     public KeyCode throwKey = KeyCode.Mouse0;
     public float throwForce;
     public float throwUpwardForce;
 
     bool readyToThrow;
 
+    //Audio
+    [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip pop;
+
+    //Cam Shake
+    [Header("Cam Shake")]
+    public CameraShake shakingScript;
+    public float shakeDuration;
+    public float shakeIntensity;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +70,7 @@ public class CubeThrow : MonoBehaviour
             forceDirection = (hit.point - attackPoint.position).normalized;
         }
 
+        shakingScript.ShakeCamera(shakeDuration, shakeIntensity);
         audioSource.PlayOneShot(pop);
 
         //force to add
