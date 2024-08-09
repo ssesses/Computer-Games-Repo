@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2900614740339211393}
   - component: {fileID: 5432158184165520410}
   - component: {fileID: 7263077415341784437}
+  - component: {fileID: 4892487789772363088}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -130,6 +131,33 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4892487789772363088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3709298394111241824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877bfbbf798d2944aa1b1d7a6aef68d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  player: {fileID: 227318849921005392}
+  Floor:
+    serializedVersion: 2
+    m_Bits: 64
+  isPlayer:
+    serializedVersion: 2
+    m_Bits: 512
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0
+  timeBetweenAttacks: 0
+  sightRange: 0
+  attackRange: 0
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &5937568494750113775
 GameObject:
   m_ObjectHideFlags: 0
