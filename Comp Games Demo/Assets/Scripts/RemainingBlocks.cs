@@ -16,7 +16,7 @@ public class RemainingBlocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(throwKey))
+        if(Input.GetKeyDown(throwKey) && !PauseMenu.isPaused)
         {
             if(blockCount > 0)
             {

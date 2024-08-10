@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5432158184165520410}
   - component: {fileID: 7263077415341784437}
   - component: {fileID: 4892487789772363088}
+  - component: {fileID: 6507016600083794428}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -152,12 +153,36 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 0
+  walkPointRange: 20
   timeBetweenAttacks: 0
-  sightRange: 0
+  sightRange: 5
   attackRange: 0
   playerInSightRange: 0
   playerInAttackRange: 0
+  hit: {fileID: 8300000, guid: 79a0b109be943c6459274ab42aba7431, type: 3}
+  source: {fileID: 0}
+--- !u!195 &6507016600083794428
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3709298394111241824}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5937568494750113775
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 5937568494750113775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.314, y: 0.37, z: 0}
+  m_LocalPosition: {x: 0, y: 0.37, z: 0.195}
   m_LocalScale: {x: 0.50152, y: 0.37711, z: 0.66021}
   m_ConstrainProportionsScale: 0
   m_Children: []

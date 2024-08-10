@@ -35,16 +35,20 @@ public class CubeThrow : MonoBehaviour
     public float shakeDuration;
     public float shakeIntensity;
 
+    [Header("Particles")]
+    ParticleSystem fire;
+
     // Start is called before the first frame update
     void Start()
     {
         readyToThrow = true;
+        fire = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
+        if(Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0 && !PauseMenu.isPaused)
         {
             Throw();
         }
@@ -72,6 +76,7 @@ public class CubeThrow : MonoBehaviour
 
         shakingScript.ShakeCamera(shakeDuration, shakeIntensity);
         audioSource.PlayOneShot(pop);
+        fire.Play();
 
         //force to add
         Vector3 forceToAdd = forceDirection * throwForce + transform.up * throwUpwardForce;

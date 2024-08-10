@@ -23,39 +23,42 @@ public CameraShake shakingScript;
     // Update is called once per frame
     void Update()
     {
-        //Get X and Y mouse position and rotate target accordingly
-        float horizontal = Input.GetAxis("Mouse X") * rotationSensitivity;
-        target.Rotate(0, horizontal, 0);
-
-        float vertical = Input.GetAxis("Mouse Y") * rotationSensitivity;
-        pivot.Rotate(vertical, 0, 0);
-
-        //limit camera rotation
-        if(pivot.rotation.eulerAngles.x > 45f && pivot.rotation.eulerAngles.x < 180f)
+        if(!PauseMenu.isPaused)
         {
-            pivot.rotation = Quaternion.Euler(45f, 0, 0);
-        }
+            //Get X and Y mouse position and rotate target accordingly
+            float horizontal = Input.GetAxis("Mouse X") * rotationSensitivity;
+            target.Rotate(0, horizontal, 0);
 
-        if(pivot.rotation.eulerAngles.x > 180 && pivot.rotation.eulerAngles.x < 315f)
-        {
-            pivot.rotation = Quaternion.Euler(315f, 0, 0);
-        }
+            float vertical = Input.GetAxis("Mouse Y") * rotationSensitivity;
+            pivot.Rotate(vertical, 0, 0);
 
-        //Move camera based on target rotation
-        float YAngle = target.eulerAngles.y;
-        float XAngle = pivot.eulerAngles.x;
-
-        Quaternion rotation = Quaternion.Euler(XAngle, YAngle, 0);
-
-        if(shakingScript.Shaking == false)
-        {
-            transform.position = target.position - (rotation * offset);
-
-            if(transform.position.y < target.position.y)
+            //limit camera rotation
+            if(pivot.rotation.eulerAngles.x > 45f && pivot.rotation.eulerAngles.x < 180f)
             {
-                transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
+                pivot.rotation = Quaternion.Euler(45f, 0, 0);
             }
+
+            if(pivot.rotation.eulerAngles.x > 180 && pivot.rotation.eulerAngles.x < 315f)
+            {
+                pivot.rotation = Quaternion.Euler(315f, 0, 0);
+            }
+
+            //Move camera based on target rotation
+            float YAngle = target.eulerAngles.y;
+            float XAngle = pivot.eulerAngles.x;
+
+            Quaternion rotation = Quaternion.Euler(XAngle, YAngle, 0);
+
+            if(shakingScript.Shaking == false)
+            {
+                transform.position = target.position - (rotation * offset);
+
+                if(transform.position.y < target.position.y)
+                {
+                    transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
+                }
+            }
+            transform.LookAt(target);
         }
-        transform.LookAt(target);
     }
 }

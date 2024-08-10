@@ -19,6 +19,9 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    public AudioClip hit;
+    public AudioSource source;
+
     private void Awake()
     {
         player = GameObject.Find("Cube").transform;
@@ -94,6 +97,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(col.gameObject.tag.Equals("AttackCube"))
         {
+            source.PlayOneShot(hit);
             Destroy(gameObject);
         }
     }
