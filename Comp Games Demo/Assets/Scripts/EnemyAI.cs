@@ -48,15 +48,15 @@ public class EnemyAI : MonoBehaviour
 
     private void Patroling()
     {
-        if(!walkPointSet) SearchWalkPoint();
+            if(!walkPointSet) SearchWalkPoint();
 
-        if(walkPointSet)
-            agent.SetDestination(walkPoint);
+            if(walkPointSet)
+                agent.SetDestination(walkPoint);
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+            Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if(distanceToWalkPoint.magnitude < 5f)
-            walkPointSet = false;
+            if(distanceToWalkPoint.magnitude < 10f)
+                walkPointSet = false;
     }
 
     private void SearchWalkPoint()
