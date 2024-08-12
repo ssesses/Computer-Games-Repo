@@ -14,4 +14,13 @@ public class PlayerPos : MonoBehaviour
             transform.position = cp.lastCheckPointPos;
         }
     }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            cp = GameObject.FindGameObjectWithTag("cp").GetComponent<Checkpoint>();
+            transform.position = cp.lastCheckPointPos + new Vector3(0, 5, 0);
+        }
+    }
 }
